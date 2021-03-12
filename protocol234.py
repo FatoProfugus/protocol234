@@ -113,17 +113,12 @@ def main():
 	recovered_k = p521.point_mul(recovered_X[0], recovered_X[1], b)
 	print('Bob computes secret key k =', hex(recovered_k[0]))
 	print('It is '+str(k[0]==recovered_k[0])+' that Alice and Bob compute the same scret key')
-	#print(X)
-	#print(recovered_X)
-	#print(recovered_k[0] == k[0])
 
 	ciphertext = ciphertext[1:]
 	my_simon = SimonCipher(recovered_k[0], key_size=256, block_size=128)
 	recovered_text = []
 	for t in ciphertext:
 		recovered_text.append(hex(my_simon.decrypt(t))[2:])
-	#print(ciphertext)
-	#print(recovered_text)
 
 	(recovered_r, recovered_s, recovered_A_prime, recovered_message) = recover(recovered_text, r)
 	

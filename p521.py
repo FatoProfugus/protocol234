@@ -106,49 +106,6 @@ def verify(r, s, A, A_prime, hash_x):
 	return False, ''
 
 def main():
-	"""
-	n = 457351 #ephemeral
-	private = 1537540
-
-	(B_x, B_y) = pointMult(P_x,P_y,private,a,p)
-	print('B_x =', B_x)
-	print('B_y =', B_y)
-
-	(R_x, R_y) = pointMult(P_x,P_y,n,a,p)
-	print('R_x =,', R_x)
-	print('R_y =,', R_y)
-
-	x = 0x777196555de9a55a506c5c8be936e9438e979ed58814a62eb361b89c316ef61714affcc03cad7912bc7696324e5f958aae2b7b517ec5b1db1441915f9b5be446
-	r = R_x
-	print('xr mod q is equivalent to', (x*r)%q)
-
-	inv_n = pow(n, -1, q) #ephemeral inverse
-	print('inv_n =', inv_n)
-
-	s = ((x+private*r)*inv_n)%q
-	print('r =', r)
-	print('s =', s)
-
-	w = pow(s, -1, q)
-	u1 = (w*x)%q
-	u2 = (w*r)%q
-	(u1P_x, u1P_y) = pointMult(P_x,P_y,u1,a,p)
-	(u2B_x, u2B_y) = pointMult(B_x,B_y,u2,a,p)
-	(V_x, V_y) = pointAdd(u1P_x, u1P_y, u2B_x, u2B_y, p)
-	v = V_x
-	print('w =', w)
-	print('u1 =', u1)
-	print('u2 =', u2)
-	print('V_x =', V_x)
-	print('V_y =', V_y)
-	print('v == r is', v%q == r%q)
-
-
-	(x,y) = pointMult(5,1,10,2,17)
-	print('x =', x)
-	print('y =', y)
-	"""
-
 	return
 
 if __name__ == '__main__':
